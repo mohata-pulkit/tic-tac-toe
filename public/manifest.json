@@ -23,7 +23,7 @@
 			"sizes": "64x64"
 		}
 	],
-	"start_url": "/",
+	"start_url": "/tic-tac-toe/",
 	"background_color": "#fffdd0",
 	"display": "standalone",
 	"scope": "/",
