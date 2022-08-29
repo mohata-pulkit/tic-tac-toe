@@ -1,25 +1,50 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"short_name": "TTT",
+	"name": "Tic Tac Toe",
+	"icons": [
+		{
+			"src": "./icons/ttt-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "./icons/ttt-256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "./icons/ttt-128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "./icons/ttt-64.png",
+			"type": "image/png",
+			"sizes": "64x64"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#fffdd0",
+	"display": "standalone",
+	"scope": "/",
+	"shortcuts": [],
+	"theme_color": "#4c3228",
+	"description": "cool minimalist tic tac toe :)",
+	"screenshots": [
+		{
+			"src": "./screenshots/main.png",
+			"type": "image/png",
+			"sizes": "853x928"
+		},
+		{
+			"src": "./screenshots/win.png",
+			"type": "image/png",
+			"sizes": "853x928"
+		},
+		{
+			"src": "./screenshots/draw.png",
+			"type": "image/png",
+			"sizes": "853x928"
+		}
+	]
 }
