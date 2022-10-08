@@ -1,5 +1,5 @@
 :root {
-	font-size: 24px;
+	font-size: 16px;
 	font-family: "Courier New", Courier, monospace;
 	--text-color-main: #212121;
 	--text-color-alt: #e0e0e0;
@@ -28,7 +28,7 @@ body,
 main {
 	display: flex;
 	gap: 2rem;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	color: var(--text-color-main);
@@ -37,11 +37,19 @@ main {
 	width: 100%;
 }
 
+.game {
+	display: flex;
+	gap: 2rem;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .board {
 	background: var(--bg-color-acc);
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
@@ -101,4 +109,29 @@ main {
 
 .D {
 	background: var(--text-color-acc);
+}
+
+.canvas {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	align-items: center;
+	justify-content: center;
+}
+
+.pixel-group {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	align-items: center;
+	justify-content: center;
+}
+
+.pixel {
+	width: 2.5rem;
+	border: var(--text-color-main) solid 1px;
+	height: 2.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

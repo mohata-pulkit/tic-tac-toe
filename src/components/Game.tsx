@@ -28,6 +28,8 @@ function Game(props: { gameState: any; setState: any }) {
 				newState.turn = "X";
 			}
 
+			newState.updatedAt = new Date();
+
 			props.setState(newState);
 		}
 	}
@@ -40,39 +42,48 @@ function Game(props: { gameState: any; setState: any }) {
 				nulls++;
 			} else if (
 				value !== "" &&
-				index % 3 === 0 &&
+				index % 4 === 0 &&
 				value === state[index + 1] &&
-				value === state[index + 2]
+				value === state[index + 2] &&
+				value === state[index + 3]
 			) {
 				win = true;
 			} else if (
 				value !== "" &&
-				index < 3 &&
-				value === state[index + 3] &&
-				value === state[index + 6]
+				index < 4 &&
+				value === state[index + 4] &&
+				value === state[index + 8] &&
+				value === state[index + 12]
 			) {
 				win = true;
 			} else if (
 				value !== "" &&
-				index === 2 &&
-				value === state[4] &&
-				value === state[6]
+				index === 3 &&
+				value === state[6] &&
+				value === state[9] &&
+				value === state[12]
 			) {
 				win = true;
 			} else if (
 				value !== "" &&
 				index === 0 &&
-				value === state[4] &&
-				value === state[8]
+				value === state[5] &&
+				value === state[10] &&
+				value === state[15]
 			) {
 				win = true;
 			}
 		});
-		if (nulls === 0) {
+		if (win) {
+			return win;
+		} else if (nulls === 0) {
 			return null;
+		} else {
+			return win;
 		}
-		return win;
 	}
+
+	console.log("here");
 
 	return (
 		<div className="board">
