@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
-import _, { result, xor, xorWith } from "lodash";
+import _ from "lodash";
 
 function Art(props: { gameState: any }) {
+	var fetchOptions = {
+		method: "POST",
+		header: new Headers({
+			"Content-Type": "application/json",
+		}),
+		//cross origin mode is needed as we are not using the same domain
+		mode: "cors",
+	};
+
 	var initialArt = props.gameState.game.map(() =>
 		new Array(props.gameState.game.length).fill(0)
 	);
@@ -75,6 +84,13 @@ function Art(props: { gameState: any }) {
 
 		return result;
 	}
+	fetch("http://localhost:1000/arts", fetchOptions)
+		.then((response) => {
+			return response.json();
+		})
+		.then((result) => {
+			console.log("result");
+		});
 
 	var newArt = _.cloneDeep(art);
 	var gap =
@@ -115,7 +131,20 @@ function Art(props: { gameState: any }) {
 			{art.map((gamePixels: any[], index: number) => (
 				<div className="pixel-group" key={index}>
 					{gamePixels.map((pixel: any, i: number) => (
-						<div className="pixel" key={i}>
+						<div
+							className="pixel"
+							key={i}
+							// style={{
+							// 	backgroundColor:
+							// 		"rgb(" +
+							// 		pixel +
+							// 		"," +
+							// 		pixel +
+							// 		"," +
+							// 		pixel +
+							// 		")",
+							// }}
+						>
 							{pixel}
 						</div>
 					))}
