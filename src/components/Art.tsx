@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
+import random from "../data/random.json";
 
 function Art(props: { gameState: any }) {
 	var initialArt = props.gameState.game.map(() =>
@@ -96,6 +97,18 @@ function Art(props: { gameState: any }) {
 		});
 	});
 
+	// arts.forEach((art, i) => {
+	// 	if (art < 128) {
+	// 		arts[i] = 0;
+	// 	} else {
+	// 		arts[i] = 1;
+	// 	}
+	// });
+
+	arts.forEach((art, i) => {
+		arts[i] = random[art];
+	});
+
 	var fetchOptions = {
 		method: "POST",
 		headers: new Headers({
@@ -106,7 +119,7 @@ function Art(props: { gameState: any }) {
 		mode: "cors" as RequestMode,
 	};
 
-	fetch("http://localhost:1000/arts", fetchOptions)
+	fetch("http://localhost:1000/arts", fetchOptions);
 
 	console.log(fetchOptions.body);
 
